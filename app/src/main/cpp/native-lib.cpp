@@ -1,22 +1,21 @@
 #include <jni.h>
 #include <string>
-
-extern "C++" {
-#include "lib_logutil/Logutil.h"
-
-}
+#include <lib_log/LogUtil.h>
 
 
+extern "C"
 JNIEXPORT void JNICALL
 Java_com_glumes_androidcppsolib_MainActivity_outputString(JNIEnv *env, jobject instance,
                                                           jstring msg_) {
     const char *msg = env->GetStringUTFChars(msg_, 0);
 
     // TODO
-
-    Logutil logutil;
-    logutil.LogI(msg);
-
+//
+//    LogUtil *logUtil = new LogUtil();
+//
+//    logUtil->test(msg);
+    LogUtil logUtil ;
+    logUtil.test("two");
     env->ReleaseStringUTFChars(msg_, msg);
 }
 

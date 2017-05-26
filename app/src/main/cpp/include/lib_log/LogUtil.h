@@ -6,10 +6,16 @@
 #define ANDROIDCPPSOLIB_LOGUTIL_H
 
 
-class Logutil {
+#include <string>
+
+using namespace std;
+
+class LogUtil {
 
 public:
-    void LogI(const char *tag);
+    LogUtil();
+
+    void test(string msg);
 };
 
 
