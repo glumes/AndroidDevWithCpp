@@ -32,6 +32,9 @@ find_library( # Sets the name of the path variable.
               # you want CMake to locate.
               log )
 
+
+include_directories(src/main/cpp/include/)
+
 # Specifies libraries CMake should link to your target library. You
 # can link multiple libraries, such as libraries you define in this
 # build script, prebuilt third-party libraries, or system libraries.
