@@ -20,6 +20,18 @@ add_library( # Sets the name of the library.
              src/main/cpp/include/lib_log/LogUtil.cpp
              src/main/cpp/native-lib.cpp )
 
+add_library( # Sets the name of the library.
+             c-lib
+
+             # Sets the library as a shared library.
+             SHARED
+
+             # Provides a relative path to your source file(s).
+             src/main/cpp/include/c_lib/c_file.c
+             src/main/cpp/include/c_lib/c_mem.c
+
+             )
+
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
 # default, you only need to specify the name of the public NDK library
@@ -46,3 +58,10 @@ target_link_libraries( # Specifies the target library.
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib} )
+
+target_link_libraries( # Specifies the target library.
+                        c-lib
+
+                        # Links the target library to the log library
+                        # included in the NDK.
+                        ${log-lib} )
