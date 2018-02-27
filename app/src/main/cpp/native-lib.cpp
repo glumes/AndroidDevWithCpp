@@ -9,13 +9,6 @@ Java_com_glumes_androidcppsolib_MainActivity_outputString(JNIEnv *env, jobject i
                                                           jstring msg_) {
     const char *msg = env->GetStringUTFChars(msg_, 0);
 
-    // TODO
-//
-//    LogUtil *logUtil = new LogUtil();
-//
-//    logUtil->test(msg);
-    LogUtil logUtil ;
-    logUtil.test("two");
     env->ReleaseStringUTFChars(msg_, msg);
 }
 

@@ -1,6 +1,10 @@
 #include <jni.h>
 #include <string>
+#include <android/log.h>
 
+#define TAG "NativeCodec-looper"
+
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, TAG, __VA_ARGS__)
 
 extern "C"
 JNIEXPORT void JNICALL
@@ -8,11 +12,6 @@ Java_com_glumes_androidcppsolib_MainActivity_outputString(JNIEnv *env, jobject i
                                                           jstring msg_) {
     const char *msg = env->GetStringUTFChars(msg_, 0);
 
-    // TODO
-//
-//    LogUtil *logUtil = new LogUtil();
-//
-//    logUtil->test(msg);
     env->ReleaseStringUTFChars(msg_, msg);
 }
 
@@ -24,4 +23,12 @@ Java_com_glumes_androidcppsolib_MainActivity_stringFromJNI(
     std::string hello = "Hello from C++";
 
     return env->NewStringUTF(hello.c_str());
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_glumes_androidcppsolib_nativefactory_NativeEngine_pringlog(JNIEnv *env, jclass type) {
+
+    // TODO
+    LOGD("print log");
 }

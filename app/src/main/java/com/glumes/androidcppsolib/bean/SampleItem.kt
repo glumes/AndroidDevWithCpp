@@ -2,6 +2,7 @@ package com.glumes.androidcppsolib.bean
 
 import android.util.Log
 import android.view.View
+import com.glumes.androidcppsolib.nativefactory.NativeEngine
 
 /**
  * @Author glumes
@@ -12,6 +13,8 @@ class NativeCrashSample : View.OnClickListener {
 
     override fun onClick(p0: View?) {
         Log.d("SampleItem", "OnClick")
+
+        NativeEngine.pringlog()
     }
 }
 
