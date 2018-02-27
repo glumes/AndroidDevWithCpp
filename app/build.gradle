@@ -46,5 +46,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     implementation 'com.android.support:recyclerview-v7:27.0.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    implementation project(':cppso')
 }
 

@@ -17,7 +17,6 @@ add_library( # Sets the name of the library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             src/main/cpp/include/lib_log/LogUtil.cpp
              src/main/cpp/native-lib.cpp )
 
 
@@ -35,7 +34,6 @@ find_library( # Sets the name of the path variable.
               log )
 
 
-include_directories(src/main/cpp/include/)
 
 # Specifies libraries CMake should link to your target library. You
 # can link multiple libraries, such as libraries you define in this
