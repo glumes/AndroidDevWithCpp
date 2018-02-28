@@ -30,5 +30,8 @@ JNIEXPORT void JNICALL
 Java_com_glumes_androidcppsolib_nativefactory_NativeEngine_pringlog(JNIEnv *env, jclass type) {
 
     // TODO
+
+
     LOGD("print log");
 }
+

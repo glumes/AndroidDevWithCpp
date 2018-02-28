@@ -1,5 +1,6 @@
 package com.glumes.cppso
 
+import com.glumes.cppso.callback.CallBackClass
 import com.glumes.cppso.utils.LogUtil
 
 /**
@@ -9,6 +10,14 @@ class NativeOperation {
 
 
     companion object {
+
+
+        val callback = CallBackClass()
+
+        init {
+            callback.str = "callback"
+            callback.num = 100
+        }
 
         /**
          * 从 Native 中输出 String
@@ -21,16 +30,29 @@ class NativeOperation {
         /**
          * JNI 中的数组分为：基本类型数组 和 对象数组
          */
-        fun getNativeIntArray(){
+        fun getNativeIntArray() {
             var array = SampleNativeMethod.NativeIntArray()
             LogUtil.d("size is " + array.size)
-            for (it in array){
+            for (it in array) {
                 LogUtil.d("num $it is $it")
             }
         }
 
-        fun nativeArray() {
+        fun callStaticMethod() {
+            LogUtil.d("before callback num is " + callback.num)
+            SampleNativeMethod.NativeCallStaticMethod()
+            LogUtil.d("after callback num is " + callback.num)
+        }
 
+        fun callInstanceMethod() {
+            LogUtil.d("before callback str is " + callback.str)
+            SampleNativeMethod.NativeCallInstanceMethod(callback)
+            LogUtil.d("after callback str is " + callback.str)
+        }
+
+
+        fun callSuperMethod() {
+            SampleNativeMethod.NativeCallSuperMethod()
         }
     }
 }

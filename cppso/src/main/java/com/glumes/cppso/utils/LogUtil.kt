@@ -11,6 +11,14 @@ class LogUtil {
 
         var TAG: String = "cppso"
 
+        fun d(msg: String) {
+            d(msg, tag = TAG)
+        }
+
+        fun i(msg: String) {
+            i(msg, tag = TAG)
+        }
+
         fun d(msg: String, tag: String = TAG) {
             Log.d(tag, msg)
         }

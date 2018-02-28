@@ -5,8 +5,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.glumes.androidcppsolib.R
 import com.glumes.androidcppsolib.base.BaseActivity
-import com.glumes.androidcppsolib.utils.NATIVE_INT_ARRAY
-import com.glumes.androidcppsolib.utils.NATIVE_STRING
+import com.glumes.androidcppsolib.utils.*
 import com.glumes.androidcppsolib.viewholder.SampleBinder
 import com.glumes.androidcppsolib.viewholder.SampleModel
 import com.glumes.databindingadapter.DataBindingAdapter
@@ -43,9 +42,9 @@ class NativeOperationActivity : BaseActivity() {
     private fun initData() {
         items.add(SampleModel("getNativeString", NATIVE_STRING))
         items.add(SampleModel("getNativeIntArray", NATIVE_INT_ARRAY))
-        items.add(SampleModel("a"))
-        items.add(SampleModel("a"))
-        items.add(SampleModel("a"))
+        items.add(SampleModel("callStaticMethod", NATIVE_CALL_STATIC_METHOD))
+        items.add(SampleModel("callInstanceMethod", NATIVE_CALL_INSTANCE_METHOD))
+        items.add(SampleModel("callSuperMethod", NATIVE_CALL_SUPER_METHOD))
         items.add(SampleModel("a"))
     }
 }

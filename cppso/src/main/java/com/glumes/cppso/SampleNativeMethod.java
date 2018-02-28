@@ -1,5 +1,9 @@
 package com.glumes.cppso;
 
+import com.glumes.cppso.callback.CallBackClass;
+
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by glumes on 28/02/2018
  */
@@ -14,6 +18,14 @@ public class SampleNativeMethod {
 
     public static native int[] NativeIntArray();
 
+
+    public static native void NativeCallStaticMethod();
+
+    public static native void NativeCallInstanceMethod(@NotNull CallBackClass callback);
+
+    public static native void NativeCallSuperMethod();
+
     public static native int[][] NativeArray();
 
+    public native void NativeTest();
 }
