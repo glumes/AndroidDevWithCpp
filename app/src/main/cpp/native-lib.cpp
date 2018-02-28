@@ -1,6 +1,5 @@
 #include <jni.h>
 #include <string>
-#include <lib_log/LogUtil.h>
 
 
 extern "C"
