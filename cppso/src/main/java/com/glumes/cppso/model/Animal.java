@@ -1,6 +1,5 @@
 package com.glumes.cppso.model;
 
-import android.util.Log;
 
 import com.glumes.cppso.utils.LogUtil;
 
@@ -9,6 +8,22 @@ import com.glumes.cppso.utils.LogUtil;
  */
 
 public class Animal {
+
+
+    protected String name;
+
+
+    public Animal(String name) {
+        this.name = name;
+        LogUtil.Companion.d("Animal Construct call...");
+    }
+
+
+    public String getName() {
+        LogUtil.Companion.d("Animal.getName Call...");
+        return this.name;
+    }
+
 
     public void run() {
         LogUtil.Companion.d("this is Animal Class");

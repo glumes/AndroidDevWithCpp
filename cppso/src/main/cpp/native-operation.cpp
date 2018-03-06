@@ -144,6 +144,70 @@ Java_com_glumes_cppso_SampleNativeMethod_NativeCallSuperMethod(JNIEnv *env, jcla
     // TODO
 
     LOGD("Call super method");
+    jclass cls_cat;
+    jclass cls_animal;
+    jmethodID mid_cat_init;
+    jmethodID mid_run;
+    jmethodID mid_getName;
+    jstring c_str_name;
+    jobject obj_cat;
+    const char *name = NULL;
+
+    // 获得 Cat 类的 class 引用
+    cls_cat = env->FindClass("com/glumes/cppso/model/Cat");
+    if (cls_cat == NULL){
+        return;
+    }
+
+    mid_cat_init = env->GetMethodID(cls_cat,"<init>","(Ljava/lang/String;)V");
+
+    if (mid_cat_init == NULL){
+        return;
+    }
+
+    c_str_name = env->NewStringUTF("cat");
+
+    if (c_str_name == NULL){
+        return;
+    }
+
+    obj_cat = env->NewObject(cls_cat,mid_cat_init,c_str_name);
+    if (obj_cat == NULL){
+        return;
+    }
+
+
+    cls_animal = env->FindClass("com/glumes/cppso/model/Animal");
+
+    if (cls_animal == NULL){
+        return;
+    }
+
+    mid_run = env->GetMethodID(cls_animal,"run","()V");
+
+    if (mid_run == NULL){
+        return;
+    }
+
+    env->CallNonvirtualVoidMethod(obj_cat,cls_animal,mid_run);
+
+    mid_getName = env->GetMethodID(cls_animal,"getName","()Ljava/lang/String;");
+
+    if (mid_getName == NULL){
+        return;
+    }
+
+    c_str_name = (jstring) env->CallNonvirtualObjectMethod(obj_cat, cls_animal, mid_getName);
+
+    name = env->GetStringUTFChars(c_str_name,NULL);
+
+    LOGD("In Cpp:Animal Name is %s\n",name);
+
+    env->ReleaseStringUTFChars(c_str_name,name);
+    env->DeleteLocalRef(cls_cat);
+    env->DeleteLocalRef(cls_animal);
+    env->DeleteLocalRef(obj_cat);
+
 }
 
 

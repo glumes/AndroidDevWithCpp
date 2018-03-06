@@ -8,9 +8,20 @@ import com.glumes.cppso.utils.LogUtil;
 
 public class Cat extends Animal {
 
+
+    public Cat(String name) {
+        super(name);
+        LogUtil.Companion.d("Cat Construct call....");
+    }
+
+    @Override
+    public String getName() {
+        return "My name is " + this.name;
+    }
+
     @Override
     public void run() {
-        LogUtil.Companion.d("this is Cat Animal");
+        LogUtil.Companion.d(name + " Cat.run...");
     }
 
 }
