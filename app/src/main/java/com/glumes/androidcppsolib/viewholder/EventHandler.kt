@@ -18,6 +18,7 @@ class EventHandler {
             NATIVE_CALL_STATIC_METHOD -> NativeOperation.callStaticMethod()
             NATIVE_CALL_INSTANCE_METHOD -> NativeOperation.callInstanceMethod()
             NATIVE_CALL_SUPER_METHOD -> NativeOperation.callSuperMethod()
+            NATIVE_ACCESS_CACHE -> NativeOperation.accessCache()
         }
     }
 }

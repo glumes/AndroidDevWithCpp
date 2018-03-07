@@ -28,4 +28,5 @@ public class SampleNativeMethod {
     public static native int[][] NativeArray();
 
     public native void NativeTest();
+
 }

@@ -45,6 +45,6 @@ class NativeOperationActivity : BaseActivity() {
         items.add(SampleModel("callStaticMethod", NATIVE_CALL_STATIC_METHOD))
         items.add(SampleModel("callInstanceMethod", NATIVE_CALL_INSTANCE_METHOD))
         items.add(SampleModel("callSuperMethod", NATIVE_CALL_SUPER_METHOD))
-        items.add(SampleModel("a"))
+        items.add(SampleModel("Cache", NATIVE_ACCESS_CACHE))
     }
 }

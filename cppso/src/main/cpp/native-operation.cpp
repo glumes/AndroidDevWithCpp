@@ -4,12 +4,12 @@
 
 #include <jni.h>
 #include <string>
-#include <android/log.h>
 
-#define TAG "NativeMethod"
+//#define TAG "NativeMethod"
+//
+//#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, TAG, __VA_ARGS__)
 
-#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, TAG, __VA_ARGS__)
-
+#include "logutil.h"
 
 extern "C"
 JNIEXPORT jstring JNICALL
@@ -211,11 +211,10 @@ Java_com_glumes_cppso_SampleNativeMethod_NativeCallSuperMethod(JNIEnv *env, jcla
 }
 
 
-extern "C"
-JNIEXPORT void JNICALL
-Java_com_glumes_cppso_SampleNativeMethod_NativeTest(JNIEnv *env, jobject instance) {
-
-    // TODO
-
-}
-
+//extern "C"
+//JNIEXPORT void JNICALL
+//Java_com_glumes_cppso_SampleNativeMethod_NativeTest(JNIEnv *env, jobject instance) {
+//
+//    // TODO
+//
+//}

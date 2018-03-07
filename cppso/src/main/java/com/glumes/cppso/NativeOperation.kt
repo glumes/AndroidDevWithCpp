@@ -1,5 +1,6 @@
 package com.glumes.cppso
 
+import com.glumes.cppso.cache.AccessCache
 import com.glumes.cppso.callback.CallBackClass
 import com.glumes.cppso.utils.LogUtil
 
@@ -53,6 +54,15 @@ class NativeOperation {
 
         fun callSuperMethod() {
             SampleNativeMethod.NativeCallSuperMethod()
+        }
+
+        fun accessCache() {
+            val accessCache = AccessCache()
+            accessCache.accessField()
+            val chars = charArrayOf('c','a','c','h','e')
+
+            val str = accessCache.newString(chars, 5)
+            LogUtil.d(str)
         }
     }
 }
