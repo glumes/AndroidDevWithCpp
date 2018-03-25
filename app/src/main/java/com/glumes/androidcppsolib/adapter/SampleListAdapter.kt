@@ -2,7 +2,9 @@ package com.glumes.androidcppsolib.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.glumes.androidcppsolib.R
 import com.glumes.androidcppsolib.bean.NativeCrashSample
 import com.glumes.androidcppsolib.bean.SampleItem
@@ -31,4 +33,14 @@ class SampleListAdapter : RecyclerView.Adapter<ItemViewHolder>() {
         return mItems.size
     }
 
+}
+
+class ItemViewHolder(var root: View) : RecyclerView.ViewHolder(root) {
+
+    var text: TextView = root.findViewById(R.id.item_text)
+
+    fun bind(data: SampleItem) {
+        text.text = data.title
+        text.setOnClickListener(data.func)
+    }
 }
