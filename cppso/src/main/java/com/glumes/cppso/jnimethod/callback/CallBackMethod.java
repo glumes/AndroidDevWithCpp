@@ -1,4 +1,4 @@
-package com.glumes.cppso.callback;
+package com.glumes.cppso.jnimethod.callback;
 
 import com.glumes.cppso.utils.LogUtil;
 

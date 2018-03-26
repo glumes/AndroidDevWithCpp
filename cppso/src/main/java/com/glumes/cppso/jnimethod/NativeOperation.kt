@@ -1,7 +1,8 @@
-package com.glumes.cppso
+package com.glumes.cppso.jnimethod
 
-import com.glumes.cppso.cache.AccessCache
-import com.glumes.cppso.callback.CallBackClass
+import com.glumes.cppso.SampleNativeMethod
+import com.glumes.cppso.jnimethod.cache.AccessCache
+import com.glumes.cppso.jnimethod.callback.CallBackClass
 import com.glumes.cppso.utils.LogUtil
 
 /**

@@ -1,4 +1,4 @@
-package com.glumes.cppso.callback;
+package com.glumes.cppso.jnimethod.callback;
 
 /**
  * @Author glumes

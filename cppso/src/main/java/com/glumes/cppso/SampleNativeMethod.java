@@ -1,6 +1,6 @@
 package com.glumes.cppso;
 
-import com.glumes.cppso.callback.CallBackClass;
+import com.glumes.cppso.jnimethod.callback.CallBackClass;
 
 import org.jetbrains.annotations.NotNull;
 

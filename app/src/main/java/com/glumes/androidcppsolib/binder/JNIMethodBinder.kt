@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.glumes.androidcppsolib.R
 import com.glumes.androidcppsolib.databinding.ItemJniMethodBinding
 import com.glumes.androidcppsolib.utils.*
-import com.glumes.cppso.NativeOperation
+import com.glumes.cppso.jnimethod.NativeOperation
 import com.glumes.databindingadapter.BindingViewHolder
 import com.glumes.databindingadapter.ViewHolderBinder
 

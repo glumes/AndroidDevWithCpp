@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.activity_info_manager.*
 
 class InfoManageActivity : AppCompatActivity() {
 
-
     var mItems = Items()
 
 

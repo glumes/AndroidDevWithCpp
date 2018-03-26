@@ -1,4 +1,4 @@
-package com.glumes.cppso.cache;
+package com.glumes.cppso.jnimethod.cache;
 
 /**
  * @Author glumes
