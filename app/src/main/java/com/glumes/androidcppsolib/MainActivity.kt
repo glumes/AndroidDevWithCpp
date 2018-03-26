@@ -7,8 +7,9 @@ import android.support.v7.widget.Toolbar
 
 import com.glumes.androidcppsolib.base.BaseListActivity
 import com.glumes.androidcppsolib.utils.JUMP_JNI_METIOD_ACTIVITY
-import com.glumes.androidcppsolib.viewholder.MainItem
-import com.glumes.androidcppsolib.viewholder.MainListItemBinder
+import com.glumes.androidcppsolib.binder.MainItem
+import com.glumes.androidcppsolib.binder.MainListItemBinder
+import com.glumes.androidcppsolib.utils.JUMP_INFO_MANAGER_ACTIVITY
 import com.glumes.databindingadapter.DataBindingAdapter
 import com.glumes.databindingadapter.Items
 
@@ -20,6 +21,7 @@ class MainActivity : BaseListActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         items.add(MainItem("JNI相关操作", JUMP_JNI_METIOD_ACTIVITY))
+        items.add(MainItem("信息管理", JUMP_INFO_MANAGER_ACTIVITY))
     }
 
     override fun setUpToolbar(toolbar: Toolbar) {

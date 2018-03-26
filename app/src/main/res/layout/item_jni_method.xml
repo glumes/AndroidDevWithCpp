@@ -6,11 +6,11 @@
 
         <variable
             name="model"
-            type="com.glumes.androidcppsolib.viewholder.SampleModel" />
+            type="com.glumes.androidcppsolib.binder.SampleModel" />
 
         <variable
             name="eventhandler"
-            type="com.glumes.androidcppsolib.viewholder.NativeEventHandler" />
+            type="com.glumes.androidcppsolib.binder.NativeEventHandler" />
     </data>
 
     <android.support.v7.widget.CardView

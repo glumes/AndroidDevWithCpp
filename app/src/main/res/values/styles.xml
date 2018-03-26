@@ -9,5 +9,8 @@
     </style>
 
 
-
+    <declare-styleable name="ScoreItem">
+        <attr name="score_title" format="string" />
+        <attr name="score_value" format="integer" />
+    </declare-styleable>
 </resources>

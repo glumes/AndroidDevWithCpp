@@ -1,4 +1,4 @@
-package com.glumes.androidcppsolib.viewholder
+package com.glumes.androidcppsolib.binder
 
 import android.databinding.DataBindingUtil
 import android.view.LayoutInflater

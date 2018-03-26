@@ -2,10 +2,11 @@ package com.glumes.androidcppsolib.ui
 
 
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.Toolbar
 import com.glumes.androidcppsolib.base.BaseListActivity
 import com.glumes.androidcppsolib.utils.*
-import com.glumes.androidcppsolib.viewholder.SampleBinder
-import com.glumes.androidcppsolib.viewholder.SampleModel
+import com.glumes.androidcppsolib.binder.SampleBinder
+import com.glumes.androidcppsolib.binder.SampleModel
 import com.glumes.databindingadapter.DataBindingAdapter
 import com.glumes.databindingadapter.Items
 
@@ -26,6 +27,10 @@ class JNIMethodActivity : BaseListActivity() {
     override fun onResume() {
         super.onResume()
         initData()
+    }
+
+    override fun setUpToolbar(toolbar: Toolbar) {
+        toolbar.title = "JNI 方法调用"
     }
 
     private fun initData() {

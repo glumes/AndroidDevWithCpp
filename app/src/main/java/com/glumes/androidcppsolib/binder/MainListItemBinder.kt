@@ -1,4 +1,4 @@
-package com.glumes.androidcppsolib.viewholder
+package com.glumes.androidcppsolib.binder
 
 import android.content.Intent
 import android.databinding.DataBindingUtil
@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.glumes.androidcppsolib.R
 import com.glumes.androidcppsolib.databinding.ItemMainBinding
+import com.glumes.androidcppsolib.ui.InfoManageActivity
 import com.glumes.androidcppsolib.ui.JNIMethodActivity
+import com.glumes.androidcppsolib.utils.JUMP_INFO_MANAGER_ACTIVITY
 import com.glumes.androidcppsolib.utils.JUMP_JNI_METIOD_ACTIVITY
 import com.glumes.databindingadapter.BindingViewHolder
 import com.glumes.databindingadapter.ViewHolderBinder
@@ -49,6 +51,10 @@ class MainEventHandler {
         when (model.type) {
             JUMP_JNI_METIOD_ACTIVITY -> {
                 view.context.startActivity(Intent(view.context, JNIMethodActivity::class.java))
+            }
+
+            JUMP_INFO_MANAGER_ACTIVITY -> {
+                view.context.startActivity(Intent(view.context, InfoManageActivity::class.java))
             }
         }
     }

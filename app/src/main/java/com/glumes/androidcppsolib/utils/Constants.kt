@@ -5,11 +5,10 @@ package com.glumes.androidcppsolib.utils
  */
 
 
-
 // 主页面的跳转
 
 const val JUMP_JNI_METIOD_ACTIVITY = 0x00
-
+const val JUMP_INFO_MANAGER_ACTIVITY = 0x01
 
 
 // JNI 操作相关
