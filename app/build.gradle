@@ -5,7 +5,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+
     defaultConfig {
         applicationId "com.glumes.androidcppsolib"
         minSdkVersion 22
@@ -63,11 +63,11 @@ dependencies {
     implementation project(':cppso')
 
 
-    kapt 'com.android.databinding:compiler:3.0.1'
+    kapt 'com.android.databinding:compiler:3.1.0'
 
     implementation 'com.jakewharton.timber:timber:4.6.1'
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
-    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+//    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
 
     // 写 demo 用的库
     implementation 'com.glumes:sampleutil:0.0.2'

@@ -34,7 +34,7 @@ class SampleBinder : ViewHolderBinder<SampleModel, SampleViewHolder>() {
     }
 
     override fun createViewHolder(inflater: LayoutInflater?, parent: ViewGroup?): SampleViewHolder {
-        val mBinding = DataBindingUtil.inflate(inflater, R.layout.item_jni_method, parent, false) as ItemJniMethodBinding
+        val mBinding = DataBindingUtil.inflate(inflater!!, R.layout.item_jni_method, parent, false) as ItemJniMethodBinding
         return SampleViewHolder(mBinding)
     }
 }

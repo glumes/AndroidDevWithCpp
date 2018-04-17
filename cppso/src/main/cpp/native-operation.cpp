@@ -155,55 +155,55 @@ Java_com_glumes_cppso_SampleNativeMethod_NativeCallSuperMethod(JNIEnv *env, jcla
 
     // 获得 Cat 类的 class 引用
     cls_cat = env->FindClass("com/glumes/cppso/model/Cat");
-    if (cls_cat == NULL){
+    if (cls_cat == NULL) {
         return;
     }
 
-    mid_cat_init = env->GetMethodID(cls_cat,"<init>","(Ljava/lang/String;)V");
+    mid_cat_init = env->GetMethodID(cls_cat, "<init>", "(Ljava/lang/String;)V");
 
-    if (mid_cat_init == NULL){
+    if (mid_cat_init == NULL) {
         return;
     }
 
     c_str_name = env->NewStringUTF("cat");
 
-    if (c_str_name == NULL){
+    if (c_str_name == NULL) {
         return;
     }
 
-    obj_cat = env->NewObject(cls_cat,mid_cat_init,c_str_name);
-    if (obj_cat == NULL){
+    obj_cat = env->NewObject(cls_cat, mid_cat_init, c_str_name);
+    if (obj_cat == NULL) {
         return;
     }
 
 
     cls_animal = env->FindClass("com/glumes/cppso/model/Animal");
 
-    if (cls_animal == NULL){
+    if (cls_animal == NULL) {
         return;
     }
 
-    mid_run = env->GetMethodID(cls_animal,"run","()V");
+    mid_run = env->GetMethodID(cls_animal, "run", "()V");
 
-    if (mid_run == NULL){
+    if (mid_run == NULL) {
         return;
     }
 
-    env->CallNonvirtualVoidMethod(obj_cat,cls_animal,mid_run);
+    env->CallNonvirtualVoidMethod(obj_cat, cls_animal, mid_run);
 
-    mid_getName = env->GetMethodID(cls_animal,"getName","()Ljava/lang/String;");
+    mid_getName = env->GetMethodID(cls_animal, "getName", "()Ljava/lang/String;");
 
-    if (mid_getName == NULL){
+    if (mid_getName == NULL) {
         return;
     }
 
     c_str_name = (jstring) env->CallNonvirtualObjectMethod(obj_cat, cls_animal, mid_getName);
 
-    name = env->GetStringUTFChars(c_str_name,NULL);
+    name = env->GetStringUTFChars(c_str_name, NULL);
 
-    LOGD("In Cpp:Animal Name is %s\n",name);
+    LOGD("In Cpp:Animal Name is %s\n", name);
 
-    env->ReleaseStringUTFChars(c_str_name,name);
+    env->ReleaseStringUTFChars(c_str_name, name);
     env->DeleteLocalRef(cls_cat);
     env->DeleteLocalRef(cls_animal);
     env->DeleteLocalRef(obj_cat);
@@ -218,3 +218,53 @@ Java_com_glumes_cppso_SampleNativeMethod_NativeCallSuperMethod(JNIEnv *env, jcla
 //    // TODO
 //
 //}
+
+extern "C"
+JNIEXPORT jstring JNICALL
+Java_com_glumes_cppso_SampleNativeMethod_getNativeString(JNIEnv *env, jclass type, jstring str_) {
+
+    // 生成 jstring 类型的字符串
+    jstring returnValue = env->NewStringUTF("hello native string");
+    // 将 jstring 类型的字符串转换为 C 风格的字符串，会额外申请内存
+    const char *str = env->GetStringUTFChars(str_, 0);
+//    const char *strUnicode = env->GetStringChars()
+    // 释放掉申请的 C 风格字符串的内存
+    env->ReleaseStringUTFChars(str_, str);
+    // 返回 jstring 类型字符串
+
+    // 申请分配内存空间，jstring 转换为 C 风格字符串
+    const char *utfStr = env->GetStringUTFChars(str_, NULL);
+    // 做检查判断
+    if (utfStr == NULL) {
+        return NULL;
+    }
+    // 实际操作
+    printf("%s", utfStr);
+    // 操作结束后，释放内存
+    env->ReleaseStringUTFChars(str_, utfStr);
+
+
+
+//    env->GetStringUTFLength()
+
+    jchar outbuf[128], inbuf[128];
+
+    int len = env->GetStringLength(str_);
+
+    env->GetStringRegion(str_, 0, len, outbuf);
+
+
+    const jchar *c_str = NULL;
+    c_str = env->GetStringCritical(str_, NULL);
+
+    if (c_str == NULL) {
+        // error handle
+    }
+
+    env->ReleaseStringCritical(str_, c_str);
+
+    LOGD("%s", outbuf);
+
+
+    return returnValue;
+}

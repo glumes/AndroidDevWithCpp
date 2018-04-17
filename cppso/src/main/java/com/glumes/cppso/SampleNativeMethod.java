@@ -14,6 +14,8 @@ public class SampleNativeMethod {
         System.loadLibrary("native-operation");
     }
 
+    public static native String getNativeString(String str);
+
     public static native String NativeString();
 
     public static native int[] NativeIntArray();

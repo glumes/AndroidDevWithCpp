@@ -30,7 +30,7 @@ class InfoManagerBinder : ViewHolderBinder<Student, InfoManagerViewHolder>() {
     }
 
     override fun createViewHolder(inflater: LayoutInflater?, parent: ViewGroup?): InfoManagerViewHolder {
-        val mBindind = DataBindingUtil.inflate<ItemStudentInfoBinding>(inflater, R.layout.item_student_info, parent, false)
+        val mBindind = DataBindingUtil.inflate<ItemStudentInfoBinding>(inflater!!, R.layout.item_student_info, parent, false)
         return InfoManagerViewHolder(mBindind)
     }
 

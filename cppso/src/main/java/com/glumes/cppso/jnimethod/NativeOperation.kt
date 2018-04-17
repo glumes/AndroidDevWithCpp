@@ -22,8 +22,8 @@ class NativeOperation {
         }
 
         /**
-         * 从 Native 中输出 String
-         */
+        * 从 Native 中输出 String
+        */
         fun getNativeString() {
             LogUtil.d("print string from native is " + SampleNativeMethod.NativeString())
         }

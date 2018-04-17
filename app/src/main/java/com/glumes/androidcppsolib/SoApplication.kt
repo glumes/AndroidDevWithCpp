@@ -1,7 +1,7 @@
 package com.glumes.androidcppsolib
 
 import android.app.Application
-import com.squareup.leakcanary.LeakCanary
+//import com.squareup.leakcanary.LeakCanary
 import timber.log.Timber.DebugTree
 import timber.log.Timber
 
@@ -26,12 +26,12 @@ class SoApplication : Application() {
     }
 
     private fun initLeakCanary() {
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return
-        }
-        LeakCanary.install(this)
+//        if (LeakCanary.isInAnalyzerProcess(this)) {
+//            // This process is dedicated to LeakCanary for heap analysis.
+//            // You should not init your app in this process.
+//            return
+//        }
+//        LeakCanary.install(this)
     }
 
 }

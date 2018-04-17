@@ -38,7 +38,7 @@ class MainListItemBinder : ViewHolderBinder<MainItem, MainViewHolder>() {
     }
 
     override fun createViewHolder(inflater: LayoutInflater?, parent: ViewGroup?): MainViewHolder {
-        val mBinding = DataBindingUtil.inflate(inflater, R.layout.item_main, parent, false) as ItemMainBinding
+        val mBinding = DataBindingUtil.inflate(inflater!!, R.layout.item_main, parent, false) as ItemMainBinding
         return MainViewHolder(mBinding)
     }
 
