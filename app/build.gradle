@@ -63,7 +63,7 @@ dependencies {
     implementation project(':cppso')
 
 
-    kapt 'com.android.databinding:compiler:3.1.0'
+//    kapt 'com.android.databinding:compiler:3.1.0'
 
     implementation 'com.jakewharton.timber:timber:4.6.1'
 //    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
@@ -71,7 +71,7 @@ dependencies {
 
     // 写 demo 用的库
     implementation 'com.glumes:sampleutil:0.0.2'
-    implementation 'com.glumes:databindingadapter:0.0.2'
+    implementation 'com.glumes:databindingadapter:0.0.3'
 
 
 }

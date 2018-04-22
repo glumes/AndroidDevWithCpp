@@ -22,12 +22,12 @@
 
         </activity>
 
-        <activity android:name=".ui.JNIMethodActivity">
+        <activity android:name=".activity.JNIMethodActivity">
 
         </activity>
 
 
-        <activity android:name=".ui.InfoManageActivity">
+        <activity android:name=".activity.InfoManageActivity">
 
         </activity>
     </application>

@@ -9,7 +9,7 @@ class LogUtil {
 
     companion object {
 
-        var TAG: String = "cppso"
+        var TAG: String = "NativeMethod"
 
         fun d(msg: String) {
             d(msg, tag = TAG)

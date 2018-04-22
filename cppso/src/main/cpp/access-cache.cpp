@@ -5,7 +5,7 @@
 #include <jni.h>
 #include <string>
 
-#include "logutil.h"
+#include "common/logutil.h"
 
 
 extern "C"

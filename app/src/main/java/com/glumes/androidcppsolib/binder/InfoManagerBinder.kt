@@ -1,6 +1,5 @@
 package com.glumes.androidcppsolib.binder
 
-import android.databinding.DataBindingComponent
 import android.databinding.DataBindingUtil
 import android.view.LayoutInflater
 import android.view.ViewGroup

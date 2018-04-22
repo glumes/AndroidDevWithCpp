@@ -9,7 +9,7 @@
 //
 //#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, TAG, __VA_ARGS__)
 
-#include "logutil.h"
+#include "common/logutil.h"
 
 extern "C"
 JNIEXPORT jstring JNICALL
@@ -268,3 +268,4 @@ Java_com_glumes_cppso_SampleNativeMethod_getNativeString(JNIEnv *env, jclass typ
 
     return returnValue;
 }
+

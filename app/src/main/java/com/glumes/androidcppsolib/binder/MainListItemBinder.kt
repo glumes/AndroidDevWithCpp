@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.glumes.androidcppsolib.R
 import com.glumes.androidcppsolib.databinding.ItemMainBinding
-import com.glumes.androidcppsolib.ui.InfoManageActivity
-import com.glumes.androidcppsolib.ui.JNIMethodActivity
-import com.glumes.androidcppsolib.utils.JUMP_INFO_MANAGER_ACTIVITY
-import com.glumes.androidcppsolib.utils.JUMP_JNI_METIOD_ACTIVITY
+import com.glumes.androidcppsolib.activity.InfoManageActivity
+import com.glumes.androidcppsolib.activity.JNIMethodActivity
+import com.glumes.cppso.utils.JUMP_INFO_MANAGER_ACTIVITY
+import com.glumes.cppso.utils.JUMP_JNI_METIOD_ACTIVITY
 import com.glumes.databindingadapter.BindingViewHolder
 import com.glumes.databindingadapter.ViewHolderBinder
 

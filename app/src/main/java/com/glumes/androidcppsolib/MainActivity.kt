@@ -4,12 +4,11 @@ package com.glumes.androidcppsolib
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
-
 import com.glumes.androidcppsolib.base.BaseListActivity
-import com.glumes.androidcppsolib.utils.JUMP_JNI_METIOD_ACTIVITY
 import com.glumes.androidcppsolib.binder.MainItem
 import com.glumes.androidcppsolib.binder.MainListItemBinder
-import com.glumes.androidcppsolib.utils.JUMP_INFO_MANAGER_ACTIVITY
+import com.glumes.cppso.utils.JUMP_INFO_MANAGER_ACTIVITY
+import com.glumes.cppso.utils.JUMP_JNI_METIOD_ACTIVITY
 import com.glumes.databindingadapter.DataBindingAdapter
 import com.glumes.databindingadapter.Items
 

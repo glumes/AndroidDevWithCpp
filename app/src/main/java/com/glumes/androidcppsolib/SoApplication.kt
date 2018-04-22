@@ -1,10 +1,9 @@
 package com.glumes.androidcppsolib
 
-import android.app.Application
 //import com.squareup.leakcanary.LeakCanary
-import timber.log.Timber.DebugTree
+import android.app.Application
 import timber.log.Timber
-
+import timber.log.Timber.DebugTree
 
 
 /**

@@ -1,9 +1,8 @@
-package com.glumes.androidcppsolib.ui
+package com.glumes.androidcppsolib.activity
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-
 import com.glumes.androidcppsolib.R
 import com.glumes.androidcppsolib.binder.InfoManagerBinder
 import com.glumes.androidcppsolib.binder.Student

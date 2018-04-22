@@ -1,4 +1,4 @@
-package com.glumes.androidcppsolib.utils
+package com.glumes.cppso.utils
 
 /**
  * Created by glumes on 28/02/2018
@@ -14,14 +14,14 @@ const val JUMP_INFO_MANAGER_ACTIVITY = 0x01
 // JNI 操作相关
 
 const val NO_NATIVE_OPERATION = 0x10
+const val NATIVE_BASIC_TYPE = 0x13
 const val NATIVE_STRING = 0x11
-const val NATIVE_INT_ARRAY = 0x12
+const val NATIVE_ARRAY = 0x12
 
-const val NATIVE_CALL_STATIC_METHOD = 0x13
-const val NATIVE_CALL_INSTANCE_METHOD = 0x14
 
-const val NATIVE_CALL_SUPER_METHOD = 0x15
-
+const val NATIVE_CALL_STATIC_METHOD = 0x14
+const val NATIVE_CALL_INSTANCE_METHOD = 0x15
+const val NATIVE_CALL_SUPER_METHOD = 0x16
 
 const val NATIVE_ACCESS_CACHE = 0x6
 
