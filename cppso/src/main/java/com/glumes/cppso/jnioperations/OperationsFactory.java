@@ -44,6 +44,15 @@ public class OperationsFactory {
             case ConstantsKt.NATIVE_ARRAY:
                 ops = new ArrayTypeOps();
                 break;
+            case ConstantsKt.NATIVE_FIELD_AND_METHOD:
+                ops = new FieldAndMethodOps();
+                break;
+            case ConstantsKt.NATIVE_CACHE_FIELD_AND_METHOD:
+                ops = new CacheFieldAndMethodOps();
+                break;
+            case ConstantsKt.NATIVE_INVOKE_CONSTRUCTORS:
+                ops = new InvokeConstructorOps();
+                break;
             default:
                 break;
         }

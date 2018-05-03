@@ -19,9 +19,6 @@ public class Cat extends Animal {
         return "My name is " + this.name;
     }
 
-    @Override
-    public void run() {
-        LogUtil.Companion.d(name + " Cat.run...");
-    }
+
 
 }

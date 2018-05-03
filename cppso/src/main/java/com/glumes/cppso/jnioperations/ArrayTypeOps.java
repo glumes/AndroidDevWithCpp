@@ -1,5 +1,6 @@
 package com.glumes.cppso.jnioperations;
 
+import com.glumes.cppso.model.Animal;
 import com.glumes.cppso.utils.LogUtil;
 
 /**
@@ -22,6 +23,14 @@ public class ArrayTypeOps extends BaseOperation {
 
         primitiveTypeArray(intArray, floatArray, doubleArray, shortArray, longArray, boolArray, charArray, byteArray);
 
+
+        Animal[] animals = new Animal[]{
+                new Animal("cat"),
+                new Animal("dog"),
+                new Animal("pig"),
+                new Animal("fish"),
+        };
+
         print(
                 intArraySum(intArray, 3)
         );
@@ -31,6 +40,7 @@ public class ArrayTypeOps extends BaseOperation {
             LogUtil.Companion.d("num is " + value);
         }
 
+        // 对象数组的使用，相当于是一个一维数组，数组的每个内容都是一个数组
         int[][] data = getTwoDimensionalArray(3);
 
         for (int i = 0; i < 3; i++) {
@@ -38,6 +48,10 @@ public class ArrayTypeOps extends BaseOperation {
                 LogUtil.Companion.d("data is " + data[i][j]);
             }
         }
+
+        // 打印对象中的信息
+        printAnimalsName(animals);
+
     }
 
 
@@ -56,5 +70,9 @@ public class ArrayTypeOps extends BaseOperation {
     // 从 Native 返回基本数据类型数组
     private native int[] getIntArray(int num);
 
+    // 从 Native 返回二维整型数组，相当于是一个一维整型数组，每个数组内容又是数组
     private native int[][] getTwoDimensionalArray(int size);
+
+    private native void printAnimalsName(Animal[] animal);
+
 }

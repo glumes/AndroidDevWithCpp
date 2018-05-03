@@ -32,7 +32,9 @@ add_library(
             ${CMAKE_SOURCE_DIR}/jnioperations/basic-type-operation.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/string-type-operation.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/array-type-operation.cpp
-
+            ${CMAKE_SOURCE_DIR}/jnioperations/filed_and_method_operation.cpp
+            ${CMAKE_SOURCE_DIR}/jnioperations/cache_filed_and_method.cpp
+            ${CMAKE_SOURCE_DIR}/jnioperations/invoke_constructor.cpp
             )
 
 
