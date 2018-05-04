@@ -20,6 +20,7 @@ public class Animal {
 
 
     public String getName() {
+        LogUtil.Companion.d("call getName method");
         return this.name;
     }
 

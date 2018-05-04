@@ -39,8 +39,8 @@ class JNIMethodActivity : BaseListActivity() {
         items.add(SampleModel("JNI String 操作", NATIVE_STRING))
         items.add(SampleModel("JNI 数组操作", NATIVE_ARRAY))
         items.add(SampleModel("JNI 访问 Java 字段和方法", NATIVE_FIELD_AND_METHOD))
-        items.add(SampleModel("JNI 缓存字段和方法", NATIVE_CACHE_FIELD_AND_METHOD))
         items.add(SampleModel("JNI 调用构造方法", NATIVE_INVOKE_CONSTRUCTORS))
+        items.add(SampleModel("JNI 缓存字段和方法", NATIVE_CACHE_FIELD_AND_METHOD))
 
     }
 }

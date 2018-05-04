@@ -21,7 +21,6 @@ public class OperationsFactory {
 
     }
 
-
     public static OperationsFactory getInstance() {
         return OperationsFactoryHolder.mInstance;
     }
@@ -47,11 +46,11 @@ public class OperationsFactory {
             case ConstantsKt.NATIVE_FIELD_AND_METHOD:
                 ops = new FieldAndMethodOps();
                 break;
-            case ConstantsKt.NATIVE_CACHE_FIELD_AND_METHOD:
-                ops = new CacheFieldAndMethodOps();
-                break;
             case ConstantsKt.NATIVE_INVOKE_CONSTRUCTORS:
                 ops = new InvokeConstructorOps();
+                break;
+            case ConstantsKt.NATIVE_CACHE_FIELD_AND_METHOD:
+                ops = new CacheFieldAndMethodOps();
                 break;
             default:
                 break;

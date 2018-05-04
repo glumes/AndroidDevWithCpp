@@ -19,6 +19,4 @@ public class Cat extends Animal {
         return "My name is " + this.name;
     }
 
-
-
 }
