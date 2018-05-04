@@ -4,7 +4,6 @@ package com.glumes.cppso.jnioperations;
  * @Author glumes
  */
 
-import com.glumes.cppso.utils.LogUtil;
 
 /**
  * 基础数据类型的操作

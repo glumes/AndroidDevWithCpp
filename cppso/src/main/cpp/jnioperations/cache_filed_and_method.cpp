@@ -10,10 +10,8 @@ jmethodID InstanceMethodCache;
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_glumes_cppso_jnioperations_CacheFieldAndMethodOps_staticCacheField(JNIEnv *env,
-                                                                            jobject instance,
-                                                                            jobject animal) {
-    static jfieldID fid = NULL;
+Java_com_glumes_cppso_jnioperations_CacheFieldAndMethodOps_staticCacheField(JNIEnv *env, jobject instance, jobject animal) {
+    static jfieldID fid = NULL; // 声明为 static 变量进行缓存
 
     // 两种方法都行
 //    jclass cls = env->GetObjectClass(animal);
@@ -22,6 +20,7 @@ Java_com_glumes_cppso_jnioperations_CacheFieldAndMethodOps_staticCacheField(JNIE
     jstring jstr;
 
     const char *c_str;
+    // 从缓存中查找
     if (fid == NULL) {
         fid = env->GetFieldID(cls, "name", "Ljava/lang/String;");
         if (fid == NULL) {
@@ -32,21 +31,15 @@ Java_com_glumes_cppso_jnioperations_CacheFieldAndMethodOps_staticCacheField(JNIE
     }
 
     jstr = (jstring) env->GetObjectField(animal, fid);
-
     c_str = env->GetStringUTFChars(jstr, NULL);
-
     if (c_str == NULL) {
         return;
     }
-
     env->ReleaseStringUTFChars(jstr, c_str);
-
     jstr = env->NewStringUTF("new name");
-
     if (jstr == NULL) {
         return;
     }
-
     env->SetObjectField(animal, fid, jstr);
 }
 
@@ -64,9 +57,7 @@ Java_com_glumes_cppso_jnioperations_CacheFieldAndMethodOps_initCacheMethodId(JNI
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_glumes_cppso_jnioperations_CacheFieldAndMethodOps_callCacheMethod(JNIEnv *env,
-                                                                           jobject instance,
-                                                                           jobject animal) {
+Java_com_glumes_cppso_jnioperations_CacheFieldAndMethodOps_callCacheMethod(JNIEnv *env, jobject instance, jobject animal) {
     jstring name = (jstring) env->CallObjectMethod(animal, InstanceMethodCache);
     const char *c_name = env->GetStringUTFChars(name, NULL);
     LOGD("call cache method and value is %s", c_name);

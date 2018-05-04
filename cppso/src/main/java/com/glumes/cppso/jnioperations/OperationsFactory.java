@@ -52,6 +52,9 @@ public class OperationsFactory {
             case ConstantsKt.NATIVE_CACHE_FIELD_AND_METHOD:
                 ops = new CacheFieldAndMethodOps();
                 break;
+            case ConstantsKt.NATIVE_LOCAL_AND_GLOBAL_REFERENCES:
+                ops = new LocalAndGlobalReferenceOps();
+                break;
             default:
                 break;
         }

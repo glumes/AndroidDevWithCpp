@@ -10,15 +10,6 @@ cmake_minimum_required(VERSION 3.4.1)
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
-add_library( # Sets the name of the library.
-             cppso
-
-             # Sets the library as a shared library.
-             SHARED
-
-             # Provides a relative path to your source file(s).
-             ${CMAKE_SOURCE_DIR}/native-lib.cpp )
-
 
 add_library(
 
@@ -35,6 +26,7 @@ add_library(
             ${CMAKE_SOURCE_DIR}/jnioperations/filed_and_method_operation.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/cache_filed_and_method.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/invoke_constructor.cpp
+            ${CMAKE_SOURCE_DIR}/jnioperations/local_and_global_references.cpp
             )
 
 
@@ -68,9 +60,4 @@ target_link_libraries( # Specifies the target library.
                        ${log-lib} )
 
 
-target_link_libraries( # Specifies the target library.
-                       cppso
 
-                       # Links the target library to the log library
-                       # included in the NDK.
-                       ${log-lib} )

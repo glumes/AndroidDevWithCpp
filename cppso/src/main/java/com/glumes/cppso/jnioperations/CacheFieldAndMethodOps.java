@@ -8,7 +8,6 @@ import com.glumes.cppso.utils.LogUtil;
  */
 public class CacheFieldAndMethodOps extends BaseOperation {
 
-
     static {
         initCacheMethodId();
     }
@@ -21,6 +20,7 @@ public class CacheFieldAndMethodOps extends BaseOperation {
         LogUtil.Companion.d("name is " + animal.getName());
 
         callCacheMethod(animal);
+
     }
 
     private native void staticCacheField(Animal animal);
