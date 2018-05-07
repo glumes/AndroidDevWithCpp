@@ -8,13 +8,19 @@ public class LocalAndGlobalReferenceOps extends BaseOperation {
 
     @Override
     public void invoke() {
-        print(
-                cacheWithGlobalReference()
-        );
+//        print(
+//                cacheWithGlobalReference()
+//                errorCacheUseLocalReference()
+//        );
+
+        useWeakGlobalReference();
     }
 
-    private native void deleteLocalReferences();
+    private native void useWeakGlobalReference();
 
+    private native String errorCacheUseLocalReference();
+
+    // 全局引用
     private native String cacheWithGlobalReference();
 
 }
