@@ -55,6 +55,9 @@ public class OperationsFactory {
             case ConstantsKt.NATIVE_LOCAL_AND_GLOBAL_REFERENCES:
                 ops = new LocalAndGlobalReferenceOps();
                 break;
+            case ConstantsKt.NATIVE_EXCEPTIONS_OPERATIONS:
+                ops = new ExceptionOps();
+                break;
             default:
                 break;
         }

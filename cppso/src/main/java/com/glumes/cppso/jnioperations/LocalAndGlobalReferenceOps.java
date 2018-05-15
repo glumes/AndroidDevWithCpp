@@ -23,4 +23,6 @@ public class LocalAndGlobalReferenceOps extends BaseOperation {
     // 全局引用
     private native String cacheWithGlobalReference();
 
+    private native void useLocalReferenceManageFuntions();
+
 }

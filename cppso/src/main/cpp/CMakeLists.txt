@@ -27,6 +27,7 @@ add_library(
             ${CMAKE_SOURCE_DIR}/jnioperations/cache_filed_and_method.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/invoke_constructor.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/local_and_global_references.cpp
+            ${CMAKE_SOURCE_DIR}/jnioperations/exceptions-operations.cpp
             )
 
 
