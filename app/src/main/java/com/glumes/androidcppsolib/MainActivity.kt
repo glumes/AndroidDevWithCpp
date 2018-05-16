@@ -20,7 +20,7 @@ class MainActivity : BaseListActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         items.add(MainItem("JNI相关操作", JUMP_JNI_METIOD_ACTIVITY))
-        items.add(MainItem("信息管理", JUMP_INFO_MANAGER_ACTIVITY))
+//        items.add(MainItem("信息管理", JUMP_INFO_MANAGER_ACTIVITY))
     }
 
     override fun setUpToolbar(toolbar: Toolbar) {

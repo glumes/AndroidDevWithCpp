@@ -112,4 +112,3 @@ Java_com_glumes_cppso_jnioperations_BasicTypeOps_callNativeBoolean(JNIEnv *env, 
     jboolean c_bool = (jboolean) !value;
     return c_bool;
 }
-
