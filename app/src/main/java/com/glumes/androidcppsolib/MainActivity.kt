@@ -1,6 +1,7 @@
 package com.glumes.androidcppsolib
 
 
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
@@ -14,18 +15,20 @@ import com.glumes.databindingadapter.Items
 
 class MainActivity : BaseListActivity() {
 
-    private val items = Items()
 
+    private val items = Items()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        items.add(MainItem("JNI相关操作", JUMP_JNI_METIOD_ACTIVITY))
-//        items.add(MainItem("信息管理", JUMP_INFO_MANAGER_ACTIVITY))
+        items.add(MainItem("JNI • 基础操作", JUMP_JNI_METIOD_ACTIVITY))
+        items.add(MainItem("JNI 实践 • 学生信息管理", JUMP_INFO_MANAGER_ACTIVITY))
     }
 
     override fun setUpToolbar(toolbar: Toolbar) {
-        toolbar.title = "SoLib"
+        toolbar.title = resources.getString(R.string.app_name)
+        toolbar.setTitleTextColor(Color.WHITE)
     }
+
 
     override fun initAdapter(): RecyclerView.Adapter<RecyclerView.ViewHolder> {
 

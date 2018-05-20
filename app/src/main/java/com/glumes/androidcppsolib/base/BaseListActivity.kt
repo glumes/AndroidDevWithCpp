@@ -1,6 +1,8 @@
 package com.glumes.androidcppsolib.base
 
+import android.graphics.Color
 import android.os.Bundle
+import android.support.annotation.LayoutRes
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
@@ -17,13 +19,17 @@ abstract class BaseListActivity : BaseToolbarActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_base_list)
+        setContentView(getLayoutId())
 
         mRecyclerView = findViewById(R.id.mRecyclerView)
 
         initRecyclerView()
     }
 
+    @LayoutRes
+    open fun getLayoutId(): Int {
+        return R.layout.activity_base_list
+    }
 
     fun initRecyclerView() {
         val layoutManager = LinearLayoutManager(this)
@@ -38,6 +44,7 @@ abstract class BaseListActivity : BaseToolbarActivity() {
 
     override fun setUpToolbar(toolbar: Toolbar) {
         toolbar.title = getString(R.string.app_name)
+        toolbar.setTitleTextColor(Color.WHITE)
     }
 
 

@@ -30,6 +30,19 @@ add_library(
             ${CMAKE_SOURCE_DIR}/jnioperations/exceptions-operations.cpp
             )
 
+add_library(
+
+            info-manger
+
+            SHARED
+
+
+            ${CMAKE_SOURCE_DIR}/jnioperations/basic-type-operation.cpp
+            ${CMAKE_SOURCE_DIR}/infomanager/LoadManager.cpp
+
+            )
+
+
 
 include_directories(${CMAKE_SOURCE_DIR}/common/)
 
@@ -62,3 +75,9 @@ target_link_libraries( # Specifies the target library.
 
 
 
+target_link_libraries( # Specifies the target library.
+                       info-manger
+
+                       # Links the target library to the log library
+                       # included in the NDK.
+                       ${log-lib} )

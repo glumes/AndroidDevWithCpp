@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.glumes.androidcppsolib.binder.Student" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="@dimen/info_card_width"
+            android:layout_height="@dimen/info_card_height"
+            android:layout_centerInParent="true"
+            app:cardCornerRadius="21dp"
+            app:cardElevation="3dp">
+
+
+            <RelativeLayout
+                android:layout_width="@dimen/info_card_width"
+                android:layout_height="@dimen/info_card_height"
+                android:layout_gravity="center"
+                android:background="@drawable/info_card_bg">
+
+
+                <ImageView
+                    android:id="@+id/info_avatar"
+                    android:layout_width="@dimen/info_card_image_width"
+                    android:layout_height="@dimen/info_card_image_height"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="25dp"
+                    app:imageDrawableId="@{model.avatarId}" />
+
+
+                <RelativeLayout
+                    android:id="@+id/name_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_toEndOf="@+id/info_avatar"
+                    android:layout_above="@id/grade_layout"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/info_item_bg"
+                    android:padding="8dp">
+
+
+                    <TextView
+                        android:id="@+id/item_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/item_name"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/item_name"
+                        android:minWidth="100dp"
+                        android:text="@{model.name}"
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/name"
+                        android:layout_marginTop="3dp"
+                        android:layout_toEndOf="@id/item_name"
+                        android:background="#FFD8D8D8" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/grade_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/info_avatar"
+                    android:background="@drawable/info_item_bg"
+                    android:padding="8dp">
+
+
+                    <TextView
+                        android:id="@+id/item_grade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/item_grade"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/grade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/item_grade"
+                        android:minWidth="100dp"
+                        android:text='@{"" + model.grade}'
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/grade"
+                        android:layout_marginTop="3dp"
+                        android:layout_toEndOf="@id/item_grade"
+                        android:background="#FFD8D8D8" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/num_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/grade_layout"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/info_avatar"
+                    android:background="@drawable/info_item_bg"
+                    android:padding="8dp">
+
+
+                    <TextView
+                        android:id="@+id/item_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/item_num"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/item_num"
+                        android:inputType="number"
+                        android:minWidth="100dp"
+                        android:text='@{""+model.stuId}'
+                        android:textAlignment="center"
+                        android:textSize="12sp" />
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/num"
+                        android:layout_marginTop="3dp"
+                        android:layout_toEndOf="@id/item_num"
+                        android:background="#FFD8D8D8" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">AndroidCppSoLib</string>
+    <string name="app_name">JNI &amp; NDK 开发实践</string>
+
+    <string name="item_name">姓名：</string>
+    <string name="name">姓名</string>
+
+    <string name="item_grade">班级：</string>
+    <string name="grade">班级</string>
+
+    <string name="item_num">学号：</string>
+    <string name="num">学号</string>
 </resources>
