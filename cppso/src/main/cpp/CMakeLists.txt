@@ -28,6 +28,8 @@ add_library(
             ${CMAKE_SOURCE_DIR}/jnioperations/invoke_constructor.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/local_and_global_references.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/exceptions-operations.cpp
+            ${CMAKE_SOURCE_DIR}/jnioperations/native_onload.cpp
+            ${CMAKE_SOURCE_DIR}/jnioperations/thread-operations.cpp
             )
 
 add_library(

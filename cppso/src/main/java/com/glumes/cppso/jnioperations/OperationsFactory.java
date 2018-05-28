@@ -3,7 +3,6 @@ package com.glumes.cppso.jnioperations;
 import android.util.SparseArray;
 
 import com.glumes.cppso.utils.ConstantsKt;
-import com.glumes.cppso.utils.LogUtil;
 
 /**
  * @Author glumes
@@ -57,6 +56,12 @@ public class OperationsFactory {
                 break;
             case ConstantsKt.NATIVE_EXCEPTIONS_OPERATIONS:
                 ops = new ExceptionOps();
+                break;
+            case ConstantsKt.NATIVE_ON_LOAD:
+                ops = new NativeOnLoadOps();
+                break;
+            case ConstantsKt.NATIVE_THREAD_OPS:
+                ops = new ThreadOps();
                 break;
             default:
                 break;

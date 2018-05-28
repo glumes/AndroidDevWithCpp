@@ -27,6 +27,7 @@ class JNIMethodActivity : BaseListActivity() {
     }
 
     private fun initData() {
+        items.add(SampleModel("JNI 动态注册", NATIVE_ON_LOAD))
         items.add(SampleModel("JNI 基础类型操作", NATIVE_BASIC_TYPE))
         items.add(SampleModel("JNI String 操作", NATIVE_STRING))
         items.add(SampleModel("JNI 数组操作", NATIVE_ARRAY))
