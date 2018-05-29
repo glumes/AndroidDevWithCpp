@@ -20,6 +20,7 @@ add_library(
             # ${CMAKE_SOURCE_DIR}/native-operation.cpp
             # ${CMAKE_SOURCE_DIR}/access-cache.cpp
 
+            ${CMAKE_SOURCE_DIR}/common/commonutil.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/basic-type-operation.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/string-type-operation.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/array-type-operation.cpp
@@ -31,6 +32,8 @@ add_library(
             ${CMAKE_SOURCE_DIR}/jnioperations/native_onload.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/thread_operation.cpp
             )
+
+
 
 add_library(
 
@@ -44,6 +47,17 @@ add_library(
 
             )
 
+
+add_library(
+
+            avilib
+
+            SHARED
+
+            ${CMAKE_SOURCE_DIR}/avilib/avilib.c
+            ${CMAKE_SOURCE_DIR}/avilib/platform_posix.c
+
+            )
 
 
 include_directories(${CMAKE_SOURCE_DIR}/common/)
@@ -75,6 +89,12 @@ target_link_libraries( # Specifies the target library.
                        # included in the NDK.
                        ${log-lib} )
 
+target_link_libraries( # Specifies the target library.
+                       avilib
+
+                       # Links the target library to the log library
+                       # included in the NDK.
+                       ${log-lib} )
 
 
 target_link_libraries( # Specifies the target library.

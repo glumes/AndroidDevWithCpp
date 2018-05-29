@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "thread_operation.h"
+#include <commonutil.h>
 
 void *run(void *);
 
@@ -12,6 +13,8 @@ static jmethodID printNativeMsg;
 
 static JavaVM *gVm = NULL;
 static jobject gObj = NULL;
+static pthread_mutex_t mutex;
+static const char *runtimeException = "java/lang/RuntimeException";
 
 
 JNIEXPORT int JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
@@ -33,6 +36,10 @@ Java_com_glumes_cppso_jnioperations_ThreadOps_nativeInit(JNIEnv *env, jobject jo
     if (gObj == NULL) {
         gObj = env->NewGlobalRef(jobj);
     }
+
+    if (pthread_mutex_init(&mutex, NULL) != 0) {
+        throwByName(env, runtimeException, "Unable to initialize mutex");
+    }
 }
 
 JNIEXPORT void JNICALL
@@ -40,6 +47,9 @@ Java_com_glumes_cppso_jnioperations_ThreadOps_nativeFree(JNIEnv *env, jobject) {
     if (gObj != NULL) {
         env->DeleteGlobalRef(gObj);
         gObj = NULL;
+    }
+    if (pthread_mutex_destroy(&mutex) != 0) {
+        throwByName(env, runtimeException, "Unable to destroy mutex");
     }
 }
 
@@ -62,16 +72,14 @@ Java_com_glumes_cppso_jnioperations_ThreadOps_posixThreads(JNIEnv *env, jobject 
         // 创建一个线程，
         int result = pthread_create(&handles[i], NULL, run, (void *) threadRunArgs);
         if (result != 0) {
-            jclass exceptionClazz = env->FindClass("java/lang/RuntimeException");
-            env->ThrowNew(exceptionClazz, "Unable to create thread");
+            throwByName(env, runtimeException, "Unable to create thread");
         }
     }
 
     for (int i = 0; i < num; ++i) {
         void *result = NULL;
         if (pthread_join(handles[i], &result) != 0) {
-            jclass exceptionClazz = env->FindClass("java/lang/RuntimeException");
-            env->ThrowNew(exceptionClazz, "Unable to join thread");
+            throwByName(env, runtimeException, "Unable to join thread");
         } else {
             char message[26];
             sprintf(message, "Worker %d returned %d", i, result);
@@ -98,7 +106,15 @@ void *run(void *args) {
 
     if (gVm->AttachCurrentThread(&env, NULL) == 0) {
 
+        if (pthread_mutex_lock(&mutex) != 0) {
+            throwByName(env, runtimeException, "Unable to lock mutex");
+        }
+
         env->CallVoidMethod(gObj, printThreadName);
+
+        if (pthread_mutex_unlock(&mutex)) {
+            throwByName(env, runtimeException, "Unable to unlock mutex");
+        }
         // 从 Java 虚拟机上分离当前线程
         gVm->DetachCurrentThread();
     }
