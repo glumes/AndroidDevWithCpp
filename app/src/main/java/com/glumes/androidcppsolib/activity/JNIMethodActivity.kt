@@ -36,6 +36,7 @@ class JNIMethodActivity : BaseListActivity() {
         items.add(SampleModel("JNI 缓存字段和方法", NATIVE_CACHE_FIELD_AND_METHOD))
         items.add(SampleModel("JNI 不同引用类型管理", NATIVE_LOCAL_AND_GLOBAL_REFERENCES))
         items.add(SampleModel("JNI 异常处理", NATIVE_EXCEPTIONS_OPERATIONS))
+        items.add(SampleModel("JNI 线程操作", NATIVE_THREAD_OPS))
     }
 
     override fun initAdapter(): RecyclerView.Adapter<RecyclerView.ViewHolder> {

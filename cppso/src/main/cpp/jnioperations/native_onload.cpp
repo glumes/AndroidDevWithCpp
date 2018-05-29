@@ -37,19 +37,19 @@ int registerNativeMethods(JNIEnv *env, const char *clsName, JNINativeMethod *gMe
     return JNI_TRUE;
 }
 
-
-JNIEXPORT int JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
-    JNIEnv *env;
-    if (vm->GetEnv((void **) &env, JNI_VERSION_1_6) != JNI_OK) {
-        return JNI_ERR;
-    }
-
-    registerNativeMethods(env, JAVA_CLASS, gMethods, NELEM(gMethods));
-
-    LOGD("JNI OnLoad Call");
-
-    return JNI_VERSION_1_6;
-}
+//
+//JNIEXPORT int JNICALL JNI_OnLoad(JavaVM *vm, void *reserved) {
+//    JNIEnv *env;
+//    if (vm->GetEnv((void **) &env, JNI_VERSION_1_6) != JNI_OK) {
+//        return JNI_ERR;
+//    }
+//
+//    registerNativeMethods(env, JAVA_CLASS, gMethods, NELEM(gMethods));
+//
+//    LOGD("JNI OnLoad Call");
+//
+//    return JNI_VERSION_1_6;
+//}
 
 JNIEXPORT void JNI_OnUnLoad(JavaVM *vm, void *reserved) {
     LOGD("JNI OnUnLoad Call");

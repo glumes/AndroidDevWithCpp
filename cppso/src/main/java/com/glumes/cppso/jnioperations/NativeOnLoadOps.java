@@ -10,8 +10,9 @@ public class NativeOnLoadOps extends BaseOperation {
 
     @Override
     public void invoke() {
-        LogUtil.Companion.d("msg is " + getMessage());
-        LogUtil.Companion.d("plus result is " + plus(3, 0));
+        //
+//        LogUtil.Companion.d("msg is " + getMessage());
+//        LogUtil.Companion.d("plus result is " + plus(3, 0));
     }
 
 
