@@ -56,4 +56,15 @@ public class AviPlayer {
 
 
     public static native boolean render(long avi, Bitmap bitmap);
+
+
+    public static native long init(long avi);
+
+    public static native void initSurface(long instance, long avi);
+
+    public static native boolean glRender(long instance, long avi);
+
+    public static native void free(long instance);
+
+
 }

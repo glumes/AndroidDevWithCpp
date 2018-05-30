@@ -108,6 +108,7 @@ target_link_libraries( # Specifies the target library.
                        # included in the NDK.
                        avilib
                        jnigraphics
+                       GLESv1_CM
                        GLESv2
                        ${log-lib} )
 

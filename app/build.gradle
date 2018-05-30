@@ -71,6 +71,9 @@ dependencies {
     // 写 demo 用的库
     implementation 'com.glumes:sampleutil:0.0.2'
     implementation 'com.glumes:databindingadapter:0.0.3'
+
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.14'
 
 }

@@ -55,6 +55,38 @@ JNIEXPORT void JNICALL Java_com_glumes_cppso_aviplayer_AviPlayer_close
 JNIEXPORT jboolean JNICALL Java_com_glumes_cppso_aviplayer_AviPlayer_render
   (JNIEnv *, jclass, jlong, jobject);
 
+/*
+ * Class:     com_glumes_cppso_aviplayer_AviPlayer
+ * Method:    init
+ * Signature: (J)J
+ */
+JNIEXPORT jlong JNICALL Java_com_glumes_cppso_aviplayer_AviPlayer_init
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     com_glumes_cppso_aviplayer_AviPlayer
+ * Method:    initSurface
+ * Signature: (JJ)V
+ */
+JNIEXPORT void JNICALL Java_com_glumes_cppso_aviplayer_AviPlayer_initSurface
+  (JNIEnv *, jclass, jlong, jlong);
+
+/*
+ * Class:     com_glumes_cppso_aviplayer_AviPlayer
+ * Method:    glRender
+ * Signature: (JJ)Z
+ */
+JNIEXPORT jboolean JNICALL Java_com_glumes_cppso_aviplayer_AviPlayer_glRender
+  (JNIEnv *, jclass, jlong, jlong);
+
+/*
+ * Class:     com_glumes_cppso_aviplayer_AviPlayer
+ * Method:    free
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_com_glumes_cppso_aviplayer_AviPlayer_free
+  (JNIEnv *, jclass, jlong);
+
 #ifdef __cplusplus
 }
 #endif

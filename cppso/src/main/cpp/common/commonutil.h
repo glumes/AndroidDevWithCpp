@@ -9,6 +9,7 @@
 
 
 static const char *IOException = "java/io/IOException";
+static const char *RuntimeException = "java/io/RuntimeException";
 
 void throwByName(JNIEnv *env, const char *name, const char *msg);
 

@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.view.SurfaceHolder
 import android.view.SurfaceView
+import android.widget.Toast
 import com.glumes.androidcppsolib.R
 import com.glumes.cppso.aviplayer.AviPlayer
 import com.glumes.cppso.utils.LogUtil
@@ -14,7 +15,7 @@ import com.tbruyelle.rxpermissions2.RxPermissions
 import java.io.File
 import java.util.concurrent.atomic.AtomicBoolean
 
-class AviBitmapPlayerActivity : AppCompatActivity() {
+class AviBitmapPlayerActivity : AbstractPlayerActivity() {
 
     private val path = Environment.getExternalStorageDirectory().toString() + File.separator + "galleon.avi"
 
@@ -23,8 +24,6 @@ class AviBitmapPlayerActivity : AppCompatActivity() {
     private var isPlaying = AtomicBoolean()
 
     private var surfaceHolder: SurfaceHolder? = null
-
-    private var mAvi: Long = 0L
 
     private lateinit var rxPermissions: RxPermissions
 
@@ -68,10 +67,20 @@ class AviBitmapPlayerActivity : AppCompatActivity() {
 
         mSurfaceView = findViewById(R.id.surfaceView)
 
+        rxPermissions = RxPermissions(this)
 
+        rxPermissions.request(Manifest.permission.READ_EXTERNAL_STORAGE)
+                .subscribe {
+                    if (it) {
+                        preparePlay()
+                    } else {
+                        Toast.makeText(this, "No Permission", Toast.LENGTH_SHORT).show()
+                    }
+                }
+    }
+
+    private fun preparePlay() {
         if (File(path).exists()) {
-
-            rxPermissions.request(Manifest.permission.READ_EXTERNAL_STORAGE)
 
             mAvi = AviPlayer.open(path)
 
@@ -80,8 +89,11 @@ class AviBitmapPlayerActivity : AppCompatActivity() {
             surfaceHolder = mSurfaceView.holder
 
             surfaceHolder!!.addCallback(surfaceHolderCallback)
+        } else {
+            Toast.makeText(this, "File not exist", Toast.LENGTH_SHORT).show()
         }
     }
+
 
     private fun printAVIInfo() {
         LogUtil.d("file path is $path")
