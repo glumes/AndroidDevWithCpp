@@ -9,7 +9,7 @@ package com.glumes.cppso.utils
 
 const val JUMP_JNI_METIOD_ACTIVITY = 0x00
 const val JUMP_INFO_MANAGER_ACTIVITY = 0x01
-
+const val JUMP_GRAPHIC_API_ACTIVITY = 0x02
 
 // JNI 操作相关
 

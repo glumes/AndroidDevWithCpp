@@ -17,10 +17,7 @@ add_library(
 
             SHARED
 
-            # ${CMAKE_SOURCE_DIR}/native-operation.cpp
-            # ${CMAKE_SOURCE_DIR}/access-cache.cpp
-
-            ${CMAKE_SOURCE_DIR}/common/commonutil.cpp
+            #${CMAKE_SOURCE_DIR}/common/commonutil.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/basic-type-operation.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/string-type-operation.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/array-type-operation.cpp
@@ -36,31 +33,39 @@ add_library(
 
 
 add_library(
-
             info-manger
-
             SHARED
-
-
             ${CMAKE_SOURCE_DIR}/jnioperations/basic-type-operation.cpp
             ${CMAKE_SOURCE_DIR}/infomanager/LoadManager.cpp
+            )
 
+
+add_library(
+            avilib
+            SHARED
+            ${CMAKE_SOURCE_DIR}/avilib/avilib.c
+            ${CMAKE_SOURCE_DIR}/avilib/platform_posix.c
+            )
+
+
+add_library(
+            common
+            SHARED
+            ${CMAKE_SOURCE_DIR}/common/commonutil.cpp
             )
 
 
 add_library(
 
-            avilib
+            aviplayer
 
             SHARED
-
-            ${CMAKE_SOURCE_DIR}/avilib/avilib.c
-            ${CMAKE_SOURCE_DIR}/avilib/platform_posix.c
-
+            ${CMAKE_SOURCE_DIR}/aviplayer/AviPlayer.cpp
+            ${CMAKE_SOURCE_DIR}/common/commonutil.cpp
             )
 
-
 include_directories(${CMAKE_SOURCE_DIR}/common/)
+include_directories(${CMAKE_SOURCE_DIR}/avilib/)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -84,7 +89,7 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
                        native-operation
-
+                       common
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib} )
@@ -96,6 +101,15 @@ target_link_libraries( # Specifies the target library.
                        # included in the NDK.
                        ${log-lib} )
 
+target_link_libraries( # Specifies the target library.
+                       aviplayer
+                       common
+                       # Links the target library to the log library
+                       # included in the NDK.
+                       avilib
+                       jnigraphics
+                       GLESv2
+                       ${log-lib} )
 
 target_link_libraries( # Specifies the target library.
                        info-manger

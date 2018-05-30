@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.glumes.androidcppsolib.R
+import com.glumes.androidcppsolib.activity.AviBitmapPlayerActivity
 import com.glumes.androidcppsolib.databinding.ItemMainBinding
 import com.glumes.androidcppsolib.activity.InfoManageActivity
 import com.glumes.androidcppsolib.activity.JNIMethodActivity
+import com.glumes.cppso.utils.JUMP_GRAPHIC_API_ACTIVITY
 import com.glumes.cppso.utils.JUMP_INFO_MANAGER_ACTIVITY
 import com.glumes.cppso.utils.JUMP_JNI_METIOD_ACTIVITY
 import com.glumes.databindingadapter.BindingViewHolder
@@ -55,6 +57,10 @@ class MainEventHandler {
 
             JUMP_INFO_MANAGER_ACTIVITY -> {
                 view.context.startActivity(Intent(view.context, InfoManageActivity::class.java))
+            }
+
+            JUMP_GRAPHIC_API_ACTIVITY -> {
+                view.context.startActivity(Intent(view.context, AviBitmapPlayerActivity::class.java))
             }
         }
     }

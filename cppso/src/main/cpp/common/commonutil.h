@@ -7,6 +7,9 @@
 #ifndef ANDROIDCPPSOLIB_COMMONUTIL_H
 #define ANDROIDCPPSOLIB_COMMONUTIL_H
 
+
+static const char *IOException = "java/io/IOException";
+
 void throwByName(JNIEnv *env, const char *name, const char *msg);
 
 #endif //ANDROIDCPPSOLIB_COMMONUTIL_H
