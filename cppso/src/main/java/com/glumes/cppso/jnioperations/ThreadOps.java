@@ -10,15 +10,17 @@ public class ThreadOps extends BaseOperation {
 
     @Override
     public void invoke() {
+
+        createNativeThread();
         nativeInit();
-        posixThreads(2, 2);
+        posixThreads(3, 3);
     }
+
+    private native void createNativeThread();
 
     private native void nativeInit();
 
     private native void nativeFree();
-
-    private native void nativeWorker();
 
     private native void posixThreads(int threads, int iterations);
 
@@ -36,6 +38,7 @@ public class ThreadOps extends BaseOperation {
 
     /**
      * Native 回到到 Java 的方法，打印当前线程名字
+     *
      * @param msg
      */
     private void printNativeMsg(String msg) {

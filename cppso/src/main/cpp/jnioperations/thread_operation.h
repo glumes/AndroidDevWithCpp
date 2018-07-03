@@ -39,7 +39,7 @@ JNIEXPORT void JNICALL Java_com_glumes_cppso_jnioperations_ThreadOps_nativeFree
  * Method:    nativeWorker
  * Signature: ()V
  */
-JNIEXPORT void JNICALL Java_com_glumes_cppso_jnioperations_ThreadOps_nativeWorker
+JNIEXPORT void JNICALL Java_com_glumes_cppso_jnioperations_ThreadOps_createNativeThread
         (JNIEnv *, jobject);
 
 /*

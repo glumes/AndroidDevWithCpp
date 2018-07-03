@@ -8,6 +8,8 @@
 
 void *run(void *);
 
+void *printThreadHello(void *);
+
 static jmethodID printThreadName;
 static jmethodID printNativeMsg;
 
@@ -37,6 +39,7 @@ Java_com_glumes_cppso_jnioperations_ThreadOps_nativeInit(JNIEnv *env, jobject jo
         gObj = env->NewGlobalRef(jobj);
     }
 
+//    pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
     if (pthread_mutex_init(&mutex, NULL) != 0) {
         throwByName(env, runtimeException, "Unable to initialize mutex");
     }
@@ -53,10 +56,18 @@ Java_com_glumes_cppso_jnioperations_ThreadOps_nativeFree(JNIEnv *env, jobject) {
     }
 }
 
-JNIEXPORT void JNICALL
-Java_com_glumes_cppso_jnioperations_ThreadOps_nativeWorker(JNIEnv *, jobject) {
 
+JNIEXPORT void JNICALL
+Java_com_glumes_cppso_jnioperations_ThreadOps_createNativeThread(JNIEnv *, jobject) {
+    pthread_t handles;
+    int result = pthread_create(&handles, NULL, printThreadHello, NULL);
+    if (result != 0) {
+        LOGD("create thread failed");
+    } else {
+        LOGD("create thread success");
+    }
 }
+
 
 JNIEXPORT void JNICALL
 Java_com_glumes_cppso_jnioperations_ThreadOps_posixThreads(JNIEnv *env, jobject jobj, jint num,
@@ -81,6 +92,7 @@ Java_com_glumes_cppso_jnioperations_ThreadOps_posixThreads(JNIEnv *env, jobject 
         if (pthread_join(handles[i], &result) != 0) {
             throwByName(env, runtimeException, "Unable to join thread");
         } else {
+            LOGD("return value is %d",result);
             char message[26];
             sprintf(message, "Worker %d returned %d", i, result);
             jstring msg = env->NewStringUTF(message);
@@ -119,4 +131,10 @@ void *run(void *args) {
         gVm->DetachCurrentThread();
     }
     return (void *) threadRunArgs->result;
+}
+
+
+void *printThreadHello(void *) {
+    LOGD("hello thread");
+    return NULL;
 }
