@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.glumes.androidcppsolib.R
 import com.glumes.androidcppsolib.activity.AviBitmapPlayerActivity
+import com.glumes.androidcppsolib.activity.BitmapOperationActivity
 import com.glumes.androidcppsolib.databinding.ItemMainBinding
 import com.glumes.androidcppsolib.activity.InfoManageActivity
 import com.glumes.androidcppsolib.activity.JNIMethodActivity
+import com.glumes.cppso.utils.JUMP_BITMAP_OPERATION_ACTIVITY
 import com.glumes.cppso.utils.JUMP_GRAPHIC_API_ACTIVITY
 import com.glumes.cppso.utils.JUMP_INFO_MANAGER_ACTIVITY
-import com.glumes.cppso.utils.JUMP_JNI_METIOD_ACTIVITY
+import com.glumes.cppso.utils.JUMP_JNI_METHOD_ACTIVITY
 import com.glumes.databindingadapter.BindingViewHolder
 import com.glumes.databindingadapter.ViewHolderBinder
 
@@ -51,7 +53,7 @@ class MainEventHandler {
 
     fun onClick(view: View, model: MainItem) {
         when (model.type) {
-            JUMP_JNI_METIOD_ACTIVITY -> {
+            JUMP_JNI_METHOD_ACTIVITY -> {
                 view.context.startActivity(Intent(view.context, JNIMethodActivity::class.java))
             }
 
@@ -61,6 +63,10 @@ class MainEventHandler {
 
             JUMP_GRAPHIC_API_ACTIVITY -> {
                 view.context.startActivity(Intent(view.context, AviBitmapPlayerActivity::class.java))
+            }
+
+            JUMP_BITMAP_OPERATION_ACTIVITY -> {
+                view.context.startActivity(Intent(view.context, BitmapOperationActivity::class.java))
             }
         }
     }

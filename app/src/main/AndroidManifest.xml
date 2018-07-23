@@ -26,7 +26,8 @@
         <activity android:name=".activity.JNIMethodActivity" />
         <activity android:name=".activity.InfoManageActivity" />
         <activity android:name=".activity.AviBitmapPlayerActivity" />
-        <activity android:name=".activity.AviOpenGLPlayerActivity"></activity>
+        <activity android:name=".activity.AviOpenGLPlayerActivity" />
+        <activity android:name=".activity.BitmapOperationActivity"></activity>
     </application>
 
 </manifest>
