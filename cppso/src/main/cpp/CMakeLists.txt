@@ -28,6 +28,7 @@ add_library(
             ${CMAKE_SOURCE_DIR}/jnioperations/exceptions-operations.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/native_onload.cpp
             ${CMAKE_SOURCE_DIR}/jnioperations/thread_operation.cpp
+            ${CMAKE_SOURCE_DIR}/jnioperations/bitmap_operation.cpp
             )
 
 
@@ -90,6 +91,7 @@ find_library( # Sets the name of the path variable.
 target_link_libraries( # Specifies the target library.
                        native-operation
                        common
+                       jnigraphics
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib} )
