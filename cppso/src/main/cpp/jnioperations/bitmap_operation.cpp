@@ -82,8 +82,8 @@ JNIEXPORT jobject JNICALL Java_com_glumes_cppso_jnioperations_BitmapOps_convertB
         return NULL;
     }
 
-    uint32_t newWidth = bitmapInfo.height;
-    uint32_t newHeight = bitmapInfo.width;
+    uint32_t newWidth = bitmapInfo.width;
+    uint32_t newHeight = bitmapInfo.height;
 
     uint32_t *newBitmapPixels = new uint32_t[newWidth * newHeight];
 
@@ -135,8 +135,8 @@ JNIEXPORT jobject JNICALL Java_com_glumes_cppso_jnioperations_BitmapOps_mirrorBi
         return NULL;
     }
 
-    uint32_t newWidth = bitmapInfo.height;
-    uint32_t newHeight = bitmapInfo.width;
+    uint32_t newWidth = bitmapInfo.width;
+    uint32_t newHeight = bitmapInfo.height;
 
     uint32_t *newBitmapPixels = new uint32_t[newWidth * newHeight];
 

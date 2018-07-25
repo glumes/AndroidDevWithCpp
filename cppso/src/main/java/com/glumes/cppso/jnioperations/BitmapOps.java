@@ -17,6 +17,5 @@ public class BitmapOps extends BaseOperation {
 
     @Override
     public void invoke() {
-
     }
 }
