@@ -1,3 +1,6 @@
+> 该项目对应的视频课程已在慕课网上线： http://www.imooc.com/learn/1212 
+
+
 # Android NDK 开发实践之路
 
 在 Android 开发中使用 JNI 和 NDK 技术。
